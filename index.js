@@ -3,7 +3,7 @@ import { config } from './config.js';
 import { parseFile, sleep, randomValueFromInterval } from './utils/utils.js';
 
 const send = async () => {
-  if (config.API_KEY || config.SECRET_KEY || config.network || config.token || config.delay) {
+  if (!(config.API_KEY && config.SECRET_KEY && config.network && config.token && config.delay)) {
     console.log('The config.js file is filled in incorrectly.');
   }
 
